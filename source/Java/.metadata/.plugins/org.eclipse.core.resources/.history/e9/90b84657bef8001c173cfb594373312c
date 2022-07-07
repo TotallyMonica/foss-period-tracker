@@ -1,0 +1,37 @@
+package tech.monicarose.foss_period_tracker.date;
+
+abstract class Date
+{
+	private int _day;
+	private int _month;
+	private int _year;
+	
+	public void setDay(int day)
+	{
+		_day = day;
+	}
+	
+	public void setMonth(int month)
+	{
+		_month = month;
+	}
+	
+	public void setYear(int year)
+	{
+		if year < 1000
+		{
+			_year = 2000 + year;
+		}
+		else
+		{
+			_year = year;
+		}
+		
+	}
+	
+	public String toString()
+	{
+		String output = "" + _day + "." + _month + "." + _year;
+		return output;
+	}
+}

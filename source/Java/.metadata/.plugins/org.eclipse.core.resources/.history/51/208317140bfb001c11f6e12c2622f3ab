@@ -1,0 +1,115 @@
+package tech.monicarose.foss_period_tracker.date;
+
+public class Date
+{
+	final private String[] _MONTH_LIST = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+	private int _day;
+	private int _month;
+	private int _year;
+	private float _timeZone;
+	private boolean _shortYear;
+	private boolean _strMonth;
+	
+	public void SetDay(int day)
+	{
+		_day = day;
+	}
+	
+	// Sets _strMonth to false, indicating that the month was provided as an integer
+	public void SetMonth(int month)
+	{
+		_strMonth = false;
+		_month = month;
+	}
+	
+	// Convert string month format to integer
+	// Set _strMonth to true, indicating that the month was provided as a string.
+	public void SetMonth(String month)
+	{		
+		for (int i = 0; i < 12; i++)
+		{
+			if (_MONTH_LIST[i].contains(month))
+			{
+				_month = 1 + i;
+				_strMonth = true;
+				return;
+			}
+		}
+	}
+	
+	// Set the year corresponding to the length of an integer
+	// Will fall apart at year 100000. Yeah I doubt this simple little program would be used in 1000+ years
+	public void SetYear(int year)
+	{
+		if (year < 1000)
+		{
+			_shortYear = true;
+			_year = 2000 + year;
+		}
+		else
+		{
+			_shortYear = false;
+			_year = year;
+		}
+	}
+	
+	public void SetDate(String date)
+	{
+		String[] manipDate = date.split("/");
+		int year = manipDate[0];
+		SetYear(manipDate[0]);
+	}
+	
+	public void SetTimeZone(float TZ)
+	{
+		_timeZone = TZ;
+	}
+	
+	public int GetDay()
+	{
+		return _day;
+	}
+	
+	public int GetMonthInt()
+	{
+		return _month;
+	}
+	
+	public int GetYear()
+	{
+		if (_shortYear)
+		{
+			return _year - 2000;
+		}
+		else
+		{
+			return _year;
+		}
+	}
+	
+	public float GetTimeZone()
+	{
+		return _timeZone;
+	}
+	
+	public boolean IsYearShorthand()
+	{
+		return _shortYear;
+	}
+	public boolean IsMonthString()
+	{
+		return _strMonth;
+	}
+	
+	// Really a String is an array of characters
+	// Thought process: String -> char[] -> int[]
+	private int ConvertToInt(String castFrom)
+	{
+		char[] strToChar = new char[castFrom.length()];
+		
+		for (int i = 0; i < castFrom.length(); i++)
+		{
+			strToChar[i] = castFrom.charAt(i);
+		}
+	}
+}

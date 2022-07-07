@@ -1,0 +1,35 @@
+package tech.monicarose.foss_period_tracker.date;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+public class CurrentPeriod extends GregorianCalendar {
+	private Date _start;
+	private Date _next;
+	private int _offset;
+	
+	public void SetOffset(int diff) {
+		_offset = diff;
+	}
+	
+	public void StartNow() {
+		Calendar clndr = Calendar.getInstance();
+		_start = clndr.getTime(); 
+	}
+	
+	public void SetNext() {
+		SetNext(_offset);
+		
+		
+	}
+	
+	public void SetNext(int time) {
+		Calendar clndr = Calendar.getInstance();
+		clndr.set(Calendar.MINUTE, int minutes);
+	}
+	
+	public Date NextPeriod() {
+		return _next;
+	}
+}

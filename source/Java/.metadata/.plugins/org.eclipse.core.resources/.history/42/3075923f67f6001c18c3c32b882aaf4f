@@ -1,0 +1,25 @@
+package tech.monicarose.foss_period_tracker.date;
+
+public class Stored
+{
+	final private String _DATE_FORMAT = "YYYY/MM/DD";
+	private int _timeZone = 0;
+	private String _date = "";
+	
+	public Stored()
+	{
+		_date = "";
+		_timeZone = 0;
+	}
+	
+	public Stored(int _timeZone)
+	{
+		
+	}
+	
+	public static String toString()
+	{
+		String output = "";
+		return output;
+	}
+}

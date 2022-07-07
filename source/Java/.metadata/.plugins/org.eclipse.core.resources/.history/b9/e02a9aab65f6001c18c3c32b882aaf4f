@@ -1,0 +1,12 @@
+package tech.monicarose.foss_period_tracker;
+import Predition.NextPeriod;
+import tech.monicarose.foss_period_tracker.prediction.Intensity;
+import 
+
+public class Entry
+{
+	public static void main(String[] args)
+	{
+		
+	}
+}

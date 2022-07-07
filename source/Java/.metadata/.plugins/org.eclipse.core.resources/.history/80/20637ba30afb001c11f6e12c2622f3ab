@@ -1,0 +1,157 @@
+package tech.monicarose.foss_period_tracker.date;
+
+public class Date
+{
+	final private String[] _MONTH_LIST = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+	private int _day;
+	private int _month;
+	private int _year;
+	private float _timeZone;
+	private boolean _shortYear;
+	private boolean _strMonth;
+	
+	public void SetDay(int day)
+	{
+		_day = day;
+	}
+	
+	// Sets _strMonth to false, indicating that the month was provided as an integer
+	public void SetMonth(int month)
+	{
+		_strMonth = false;
+		_month = month;
+	}
+	
+	// Convert string month format to integer
+	// Set _strMonth to true, indicating that the month was provided as a string.
+	public void SetMonth(String month)
+	{		
+		for (int i = 0; i < 12; i++)
+		{
+			if (_MONTH_LIST[i].contains(month))
+			{
+				_month = 1 + i;
+				_strMonth = true;
+				return;
+			}
+		}
+	}
+	
+	public void SetYear(int year)
+	{
+		if (year < 1000)
+		{
+			_shortYear = true;
+			_year = 2000 + year;
+		}
+		else
+		{
+			_shortYear = false;
+			_year = year;
+		}
+	}
+	
+	public void SetDate(String date)
+	{
+		String[] manipDate = date.split("/");
+		int year = manipDate[0];
+		SetYear(manipDate[0]);
+	}
+	
+	public void SetTimeZone(float TZ)
+	{
+		_timeZone = TZ;
+	}
+	
+	public int GetDay()
+	{
+		return _day;
+	}
+	
+	public int GetMonthInt()
+	{
+		return _month;
+	}
+	
+	public int GetYear()
+	{
+		if (_shortYear)
+		{
+			return _year - 2000;
+		}
+		else
+		{
+			return _year;
+		}
+	}
+	
+	public float GetTimeZone()
+	{
+		return _timeZone;
+	}
+	
+	public boolean IsYearShorthand()
+	{
+		return _shortYear;
+	}
+	public boolean IsMonthString()
+	{
+		return _strMonth;
+	}
+	
+	private int ConvertToInt(String castFrom)
+	{
+		int output = 0;
+		if (castFrom.length() <= 1)
+		{
+			if (castFrom == "0")
+			{
+				output = 0;
+			}
+			else if (castFrom == "1")
+			{
+				output = 1;
+			}
+			else if (castFrom == "2")
+			{
+				output = 2;
+			}
+			else if (castFrom == "3")
+			{
+				output = 3;
+			}
+			else if (castFrom == "4")
+			{
+				output = 4;
+			}
+			else if (castFrom == "5")
+			{
+				output = 5;
+			}
+			else if (castFrom == "6")
+			{
+				output = 6;
+			}
+			else if (castFrom == "7")
+			{
+				output = 7;
+			}
+			else if (castFrom == "8")
+			{
+				output = 8;
+			}
+			else if (castFrom == "9")
+			{
+				output = 9;
+			}
+		}
+		else
+		{
+			for (int i = 0; i < castFrom.length(); i++)
+			{
+				output += ConvertToInt(castFrom.substring(i, i + 1));
+			}
+		}
+		return output;
+	}
+}
