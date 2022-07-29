@@ -57,7 +57,10 @@ public class Period extends GregorianCalendar {
 		_length = len;
 	}
 	
-	public void AlarmRange(int days) {
+	// Reminder for the user for when a cycle is supposed to start
+	// Requires an integer for number of days
+	// TODO: Add a check for an unrealistic time (<= 0)
+	public void SetAlarmRange(int days) {
 		_range = days;
 	}
 	
