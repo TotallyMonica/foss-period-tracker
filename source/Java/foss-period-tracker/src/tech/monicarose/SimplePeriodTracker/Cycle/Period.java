@@ -7,7 +7,7 @@ import java.util.GregorianCalendar;
 public class Period extends GregorianCalendar {
 	private Date _start;
 	private Calendar _current = Calendar.getInstance();
-	private Calendar _next = _current;
+	private Period _next;
 	private int _offset;
 	private int _length;
 	private int _range;
@@ -17,13 +17,8 @@ public class Period extends GregorianCalendar {
 		_start = null;
 		_offset = 0;
 		_current = Calendar.getInstance();
-		_next = _current;
 		_regular = true;
-		
 		_current.setLenient(true);
-		_next.setLenient(true);
-		
-		_next.add(Calendar.DAY_OF_MONTH, _offset);
 	}
 	
 	// Sets the number of days in between cycles
