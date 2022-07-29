@@ -1,10 +1,10 @@
-package tech.monicarose.foss_period_tracker.date;
+package tech.monicarose.SimplePeriodTracker.Cycle;
 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class CurrentPeriod extends GregorianCalendar {
+public class Period extends GregorianCalendar {
 	private Date _start;
 	private Calendar _current = Calendar.getInstance();
 	private Calendar _next = _current;
@@ -13,7 +13,7 @@ public class CurrentPeriod extends GregorianCalendar {
 	private int _range;
 	private boolean _regular = true;
 	
-	public CurrentPeriod() {
+	public Period() {
 		_start = null;
 		_offset = 0;
 		_current = Calendar.getInstance();
