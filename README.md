@@ -19,5 +19,22 @@ cd source/Java/foss-period-tracker/
     - Java (Windows/Mac/Linux)
 
 ## To-do list:
- - Port to iOS
- - Port to Android
+ - ~~Build a working prototype of the Period class~~ Done 8/4/22
+ - Expand on contraceptives and period products class, possibly abstracting that.
+ - Build out the intensity class.
+ - Test irregular cycles.
+ - Predict future cycles.
+    - When it will come
+    - How long it will last
+    - Recommended period products (if any)
+ - Consider health conditions
+ - Add logging for sexual activity
+ - Add logging of contraceptives
+    - When it was last used
+    - What is typically used
+ - Add logging of period products
+    - What was last used
+    - Consider what is typically used
+    - Consider suggestions based off of self-reported intensity.
+ - Port to iOS.
+ - Port to Android.
