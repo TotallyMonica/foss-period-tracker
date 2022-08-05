@@ -8,7 +8,7 @@ Simple Period Tracker was designed with one thing in mind: privacy. Your period 
 There are many ways you can help with the project:
  - Programming: I'm a full time college student, part time slave to the economy, and really work on this on my own free time. One of the best ways you can help is simply by submitting bug reports, submitting PRs, and the like
  - Data: The data I am working off of is self submitted by my peers, which I fully understand is not indicative of the vast majority of people. If you want to help make this better, I have a survey that is completely, 100% anonymous and every question is optional. If you'd like to fill out a brief 5-10ish minute survey, [you can fill it out here](https://forms.gle/RmDDSY7E11FQKmUC6)
- - Financial support: Like I said before, I'm a full time college student and when I'm not studying I'm working a part time job. Needless to say, this isn't my full time job and, as such, I can't dedicate as much time to the project as I'd like. If you'd like to financially support me throughout this, [you can do that here or use the sponsor link on the side.](https://paypal.me/AndrewH130?country.x=US&locale.x=en_US)
+ - Financial support: Like I said before, I'm a full time college student and when I'm not studying I'm working a part time job. Needless to say, this isn't my full time job and, as such, I can't dedicate as much time to the project as I'd like. If you'd like to financially support me throughout this, [you can do that here or use the sponsor link on the side.](https://ko-fi.com/monicarose)
 
 ## Building
 Right now, I'm doing all of my programming in Eclipse and using its built in export tool. Cringe, I know. Once I learn a good building method I'll be sure to update it here.
