@@ -1,5 +1,7 @@
 package tech.monicarose.SimplePeriodTracker.Cycle;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -15,9 +17,12 @@ public class Period extends GregorianCalendar {
 	
 	public Period() {
 		_start = null;
+		_next = null;
+		_length = 0;
 		_offset = 0;
-		_current = Calendar.getInstance();
+		_range = 0;
 		_regular = true;
+		_current = Calendar.getInstance();
 		_current.setLenient(true);
 	}
 	
@@ -32,16 +37,19 @@ public class Period extends GregorianCalendar {
 	}
 	
 	// Sets the date of the next cycle
-	// Uses _offset
+	// Requires an integer in days
 	// TODO: Throw an error if _offset is an illogical time (<= 0)
-	public void SetNext() {
-		SetNext(_offset);
+	public void SetPeriod(Date day) {
+		_start = day;
 	}
 	
-	// Sets the date of the next cycle
-	// Requires an integer in days
-	public void SetNext(int offset) {
-		_next.set(Calendar.DAY_OF_MONTH, offset);
+	public void SetPeriod() {
+		_current.add(DATE, _offset);
+		_start = _current.getTime();
+	}
+	
+	public void SetNextPeriod(Date nextDay) {
+		_next.SetPeriod(nextDay);
 	}
 	
 	// Sets if a cycle is regular or not.
@@ -65,8 +73,8 @@ public class Period extends GregorianCalendar {
 	}
 	
 	// Returns the Date of the next cycle
-	public Date NextCycle() {
-		return _start;
+	public String CycleStart() {
+		return _start.toString();
 	}
 	
 	// Returns the boolean representation of if the cycle is regular.

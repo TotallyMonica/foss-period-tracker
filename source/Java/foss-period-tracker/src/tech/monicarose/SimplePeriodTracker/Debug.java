@@ -19,10 +19,10 @@ public class Debug {
 		cycle1.SetOffset(_offset);
 		cycle1.SetLength(_length);
 		cycle1.SetRegularity(_regularity);
-		cycle1.SetNext();
+		cycle1.SetPeriod();
 		
 		System.out.println("Has started: " + cycle1.HasStarted());
 		System.out.println("Is regular: " + cycle1.IsRegular());
-		System.out.println("Next cycle: " + cycle1.NextCycle());
+		System.out.println("Next cycle: " + cycle1.CycleStart());
 	}
 }
