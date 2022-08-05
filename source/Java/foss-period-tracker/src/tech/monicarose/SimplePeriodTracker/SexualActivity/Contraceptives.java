@@ -9,12 +9,12 @@ public class Contraceptives {
 		_contraceptives.add(item);
 	}
 	
-	public boolean SearchContraceptives(String query) {
+	public int SearchContraceptives(String query) {
 		// If the ArrayList of contraceptives is empty, immediately throw false
 		// TODO: consider creating an exception for empty lists
 		
 		if (IsEmpty()) {
-			return false;
+			return -1;
 		}
 		
 		// Search across all the contraceptives in the list.
@@ -22,25 +22,21 @@ public class Contraceptives {
 		// Is a for loop necessary or could we use ArrayList.contains()?
 		for (int i = 0; i < _contraceptives.size(); i++) {
 			if (_contraceptives.get(i).contains(query)) {
-				return true;
+				return i;
 			}
 		}
-		return false;
+		return -1;
 	}
 	
 	public void RemoveContraceptive(String query) {
 		// If the ArrayList of contraceptives is empty, immediately throw a RuntimeException
-		// Is a for loop necessary or would ArrayList.contains() do the trick?
+		// Should an exception be thrown for if it's not found or just quietly exit?
 		// TODO: Consider making an exception for empty lists
 		if (IsEmpty()) {
 			throw new RuntimeException("Error: the list of contraceptives is already empty.");
 		}
 		
-		for (int i = 0; i < _contraceptives.size(); i++) {
-			if (_contraceptives.get(i).contains(query)) {
-				_contraceptives.remove(i);
-			}
-		}
+		_contraceptives.remove(SearchContraceptives(query));
 		
 	}
 	
