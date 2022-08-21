@@ -13,7 +13,6 @@ public class PeriodProducts {
 	private void Init() {
 		_knownProducts.add("Tampon");
 		_knownProducts.add("Pad");
-		_knownProducts.add("");
 	}
 	
 	public void AddProduct(String product) {

@@ -1,10 +1,10 @@
 package tech.monicarose.SimplePeriodTracker.Cycle;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import tech.monicarose.SimplePeriodTracker.Cycle.*;
+import tech.monicarose.SimplePeriodTracker.SexualActivity.*;
 
 public class Period extends GregorianCalendar {
 	private Date _start;
@@ -69,6 +69,11 @@ public class Period extends GregorianCalendar {
 	// Requires an integer for number of days
 	// TODO: Add a check for an unrealistic time (<= 0)
 	public void SetAlarmRange(int days) {
+		if (days < 0) {
+			throw new IndexOutOfBoundsException("The number that you entered is "
+					+ "not permitted. Please input a number greater than or equal "
+					+ "to 0");
+		}
 		_range = days;
 	}
 	

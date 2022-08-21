@@ -27,22 +27,22 @@ public class Debug {
 		System.out.println("Is regular: " + cycle1.IsRegular());
 		System.out.println("Next cycle: " + cycle1.CycleStart());
 		
-		contra1.AddContraceptive("Birth Control");
-		contra1.AddContraceptive("Condom");
-		contra1.AddContraceptive("Diaphragm");
-		contra1.AddContraceptive("IUD");
+		contra1.addContraceptive("Birth Control");
+		contra1.addContraceptive("Condom");
+		contra1.addContraceptive("Diaphragm");
+		contra1.addContraceptive("IUD");
 		System.out.println("\nContraceptives:");
-		for (Object contra : contra1.ListContraceptives()) {
+		for (Object contra : contra1.listContraceptives()) {
 			System.out.println(contra);
 		}
 		
-		contra1.RemoveContraceptive("Diaphragm");
+		contra1.removeContraceptive("Diaphragm");
 		System.out.println("\nAfter removing diaphragm:");
-		for (Object contra : contra1.ListContraceptives()) {
+		for (Object contra : contra1.listContraceptives()) {
 			System.out.println(contra);
 		}
 		
-		contra1.RemoveContraceptive("Morning After");
+		contra1.removeContraceptive("Morning After");
 		
 	}
 }
