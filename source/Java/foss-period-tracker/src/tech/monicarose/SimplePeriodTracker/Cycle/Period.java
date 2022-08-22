@@ -27,48 +27,48 @@ public class Period extends GregorianCalendar {
 	}
 	
 	// Sets the number of days in between cycles
-	public void SetOffset(int diff) {
+	public void setOffset(int diff) {
 		_offset = diff;
 	}
 	
 	// Starts the current cycle now
-	public void StartNow() {
+	public void startNow() {
 		_start = _current.getTime(); 
 	}
 	
 	// Sets the date of the next cycle
 	// Requires an integer in days
 	// TODO: Throw an error if _offset is an illogical time (<= 0)
-	public void SetPeriod(Date day) {
+	public void setPeriod(Date day) {
 		_start = day;
 	}
 	
-	public void SetPeriod() {
+	public void setPeriod() {
 		_current.add(DATE, _offset);
 		_start = _current.getTime();
 	}
 	
-	public void SetNextPeriod(Date nextDay) {
-		_next.SetPeriod(nextDay);
+	public void setNextPeriod(Date nextDay) {
+		_next.setPeriod(nextDay);
 	}
 	
 	// Sets if a cycle is regular or not.
 	// Requires a boolean
-	public void SetRegularity(boolean regularity) {
+	public void setRegularity(boolean regularity) {
 		_regular = regularity;
 	}
 	
 	// Sets the length of a cycle
 	// Requires an integer
 	// TODO: Add a check for an unrealistic time (<= 0)
-	public void SetLength(int len) {
+	public void setLength(int len) {
 		_length = len;
 	}
 	
 	// Reminder for the user for when a cycle is supposed to start
 	// Requires an integer for number of days
 	// TODO: Add a check for an unrealistic time (<= 0)
-	public void SetAlarmRange(int days) {
+	public void setAlarmRange(int days) {
 		if (days < 0) {
 			throw new IndexOutOfBoundsException("The number that you entered is "
 					+ "not permitted. Please input a number greater than or equal "
@@ -78,17 +78,17 @@ public class Period extends GregorianCalendar {
 	}
 	
 	// Returns the Date of the next cycle
-	public String CycleStart() {
+	public String cycleStart() {
 		return _start.toString();
 	}
 	
 	// Returns the boolean representation of if the cycle is regular.
-	public boolean IsRegular() {
+	public boolean isRegular() {
 		return _regular;
 	}
 	
 	// Returns a boolean representation of if a cycle has started
-	public boolean HasStarted() {
+	public boolean hasStarted() {
 		return _current.equals(_start) || _current.after(_start);
 	}
 }

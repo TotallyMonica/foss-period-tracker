@@ -18,14 +18,14 @@ public class Debug {
 		Period cycle1 = new Period();
 		Contraceptives contra1 = new Contraceptives();
 		
-		cycle1.SetOffset(_offset);
-		cycle1.SetLength(_length);
-		cycle1.SetRegularity(_regularity);
-		cycle1.SetPeriod();
+		cycle1.setOffset(_offset);
+		cycle1.setLength(_length);
+		cycle1.setRegularity(_regularity);
+		cycle1.setPeriod();
 		
-		System.out.println("Has started: " + cycle1.HasStarted());
-		System.out.println("Is regular: " + cycle1.IsRegular());
-		System.out.println("Next cycle: " + cycle1.CycleStart());
+		System.out.println("Has started: " + cycle1.hasStarted());
+		System.out.println("Is regular: " + cycle1.isRegular());
+		System.out.println("Next cycle: " + cycle1.cycleStart());
 		
 		contra1.addContraceptive("Birth Control");
 		contra1.addContraceptive("Condom");
