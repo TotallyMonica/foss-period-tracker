@@ -10,7 +10,7 @@ public class PeriodProducts {
 	private ArrayList<String> _knownProducts = new ArrayList<String>();
 	private ArrayList<String> _usedProducts = new ArrayList<String>();
 	
-	private void Init() {
+	public PeriodProducts() {
 		_knownProducts.add("Tampon");
 		_knownProducts.add("Pad");
 	}
