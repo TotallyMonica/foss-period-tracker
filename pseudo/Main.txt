@@ -1,1 +1,1 @@
-Uses: log-contraceptives, log-period_products, log-sexual_activity, irregularity, intensity, contraceptives, prediction
+Uses: log-contraceptives, log-period_products, log-sexual_activity, irregularity, intensity, contraceptives, prediction, period
